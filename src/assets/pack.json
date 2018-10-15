@@ -1,0 +1,32 @@
+{
+  "preload": {
+    "files": [
+      {
+        "type": "bitmapFont",
+        "key": "pixelFont",
+        "textureURL": "src/assets/font/font.png",
+        "fontDataURL": "src/assets/font/font.fnt"
+      },
+      {
+        "type": "image",
+        "key": "background",
+        "url": "src/assets/sprites/Background/bg_layer1.png"
+      },
+      {
+        "type": "image",
+        "key": "hero",
+        "url": "src/assets/sprites/Players/bunny1_ready.png"
+      },
+      {
+        "type": "image",
+        "key": "ground",
+        "url": "src/assets/sprites/Environment/ground_cake.png"
+      },
+      {
+        "type": "image",
+        "key": "obstacle",
+        "url": "src/assets/sprites/Enemies/flyMan_fly.png"
+      }
+    ]
+  }
+}

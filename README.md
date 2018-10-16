@@ -5,10 +5,7 @@ A basic infinite runner game implemented in Phaser 3
 `yarn && yarn dev`
 
 ## Resources
-* Project templates: https://github.com/digitsensitive/phaser3-typescript
+* Phaser templates: https://github.com/digitsensitive/phaser3-typescript
 * Game inspiration: https://chromedino.com
 * Artwork: https://kenney.nl/assets/jumper-pack
-
-
-## Webpack config
-`entry: './src/games/ran-run/game.ts'`
+* Tutorials used: https://phasergames.com/creating-endless-runner-game-phaser-part-7-scrolling/

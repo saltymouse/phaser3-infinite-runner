@@ -2,14 +2,19 @@
 
 import "phaser";
 import { BootScene } from "./scenes/bootScene";
+import { PreloadScene } from "./scenes/preloadScene";
 import { MainMenuScene } from "./scenes/mainMenuScene";
 import { GameScene } from "./scenes/gameScene";
-import { GameOverScene } from "./scenes/gameOver";
+import { GameOverScene } from "./scenes/gameOverScene";
 
+// initialize our game according to Phaser's 'GameConfig' object model
+// (this GameConfig object was aquired when we imported 'phaser' above)
+// https://photonstorm.github.io/phaser3-docs/Phaser.Boot.Config.html
+// https://jwiese.eu/en/blog/2017/08/phaser-3---game-configuration/
 const config: GameConfig = {
-  title: "Ran Run Mitainya",
-  url: "https://www.himeji-mitai.com/game",
-  version: "1.0",
+  title: "Infinite Runner",
+  url: "https://github.com/saltymouse/phaser3-infinite-runner",
+  version: "1.0.0",
   width: 600,
   height: 600,
   zoom: 1,
@@ -34,13 +39,14 @@ const config: GameConfig = {
   antialias: false
 };
 
+// create a 'Game' class based on Phaser.Game
 export class Game extends Phaser.Game {
   constructor(config: GameConfig) {
     super(config);
   }
 }
 
-// initialize our phaser game after DOM is ready
+// initialize our phaser game as 'game' after DOM is ready
 window.onload = () => {
   var game = new Game(config);
 };

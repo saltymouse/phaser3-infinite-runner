@@ -77,7 +77,6 @@ export class Hero extends Phaser.GameObjects.Sprite {
     this.jumpPower -= 1;
     this.body.setVelocityY(-350);
     console.log(this.jumpPower);
-    this.play('walk');
   }
 
   private isOffTheScreen(): void {

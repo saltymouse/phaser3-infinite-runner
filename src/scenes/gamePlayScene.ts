@@ -1,4 +1,3 @@
-
 import { Hero } from "../objects/hero";
 import { Obstacle } from "../objects/obstacle";
 import { Ground } from "../objects/ground";

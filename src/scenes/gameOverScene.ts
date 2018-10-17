@@ -6,12 +6,11 @@ export class GameOverScene extends Phaser.Scene {
   private bitmapTexts: Phaser.GameObjects.BitmapText[] = [];
 
   constructor() {
-    super({
-      key: "GameOverScene"
-    });
+    super({ key: "GameOverScene" });
   }
 
   init(): void {
+    // input tracking is handled by the Scene
     this.startKey = this.input.keyboard.addKey(
       Phaser.Input.Keyboard.KeyCodes.S
     );
@@ -23,7 +22,7 @@ export class GameOverScene extends Phaser.Scene {
       this.add.bitmapText(
         this.sys.canvas.width / 2 - 180,
         this.sys.canvas.height / 2 - 80,
-        "flappyHeroFont",
+        "pixelFont",
         "TRY AGAIN?",
         40
       )
@@ -33,7 +32,7 @@ export class GameOverScene extends Phaser.Scene {
       this.add.bitmapText(
         this.sys.canvas.width / 2 - 140,
         this.sys.canvas.height / 2 - 10,
-        "flappyHeroFont",
+        "pixelFont",
         "PRESS S TO PLAY",
         30
       )
@@ -42,7 +41,7 @@ export class GameOverScene extends Phaser.Scene {
 
   update(): void {
     if (this.startKey.isDown) {
-      this.scene.start("GameScene");
+      this.scene.start("GamePlayScene");
     }
   }
 }

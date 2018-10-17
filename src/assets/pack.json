@@ -24,9 +24,10 @@
         "url": "src/assets/sprites/Environment/ground_cake.png"
       },
       {
-        "type": "image",
+        "type": "atlas",
         "key": "obstacle",
-        "url": "src/assets/sprites/Enemies/flyMan_fly.png"
+        "textureURL": "src/assets/sprites/enemy.png",
+        "atlasURL": "src/assets/sprites/enemy.json"
       },
       {
         "type": "audio",

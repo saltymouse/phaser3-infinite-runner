@@ -43,7 +43,7 @@ export class Hero extends Phaser.GameObjects.Sprite {
     // physics
     this.scene.physics.world.enable(this); // add our hero to the physics collision
     this.body.setGravityY(500); // gravity specific for our hero character
-    this.body.setSize(33, 53); // hit-box size (different from visual image size)
+    this.body.setSize(this.width, this.height + 10); // set arbitrarily (not necessarily related to visual image/sprite size)
 
     // input
     this.jumpKey = this.scene.input.keyboard.addKey(
@@ -61,8 +61,7 @@ export class Hero extends Phaser.GameObjects.Sprite {
 
   private handleInput(): void {
     if (this.body.touching.down) {
-      this.jumpPower = 3;
-      console.log('jumpPower:', this.jumpPower)
+      this.jumpPower = 2;
     }
 
     if (

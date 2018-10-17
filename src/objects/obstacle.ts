@@ -1,21 +1,33 @@
 /**
- * Obstacle you must jump over
+ * Obstacle to jump over (or die!)
  */
-
 export class Obstacle extends Phaser.GameObjects.Sprite {
-  constructor(params) {
-    super(params.scene, params.x, params.y, params.key, params.frame);
+  constructor({scene, x, y, key, frame}) {
+    super(scene, x, y, key, frame);
+
+    // animations
+    this.scene.anims.create({
+      key: 'spin',
+      frames: this.scene.anims.generateFrameNames('obstacle', {
+        prefix: 'spikeBall',
+        start: 1,
+        end: 2,
+        zeroPad: 0
+      }),
+      frameRate: 5,
+      repeat: -1 // forever!
+    });
 
     // image
     this.setScale(0.5);
     this.setOrigin(0, 0);
 
     // physics
-    params.scene.physics.world.enable(this);
+    this.scene.physics.world.enable(this);
     this.body.allowGravity = false;
     this.body.setVelocityX(-200);
-    this.body.setSize(70, 70);
+    this.body.setSize(this.width, this.height);
 
-    params.scene.add.existing(this);
+    this.scene.add.existing(this);
   }
 }

@@ -71,7 +71,6 @@ export class GamePlayScene extends Phaser.Scene {
     );
 
     this.addRowOfObstacles();
-    this.addRowOfGround();
 
     this.hero = new Hero({
       scene: this, // belongs to 'this' scene (i.e. 'GamePlayScene')
@@ -84,6 +83,7 @@ export class GamePlayScene extends Phaser.Scene {
 
     // make sure our hero doesn't fall through the ground
     this.physics.add.collider(this.hero, this.groundTiles);
+    // allow overlap detection, but not collision
     this.physics.add.overlap(this.hero, this.obstacles, this.hitObstacle, null, this);
 
     this.timer = this.time.addEvent({
@@ -129,19 +129,6 @@ export class GamePlayScene extends Phaser.Scene {
     this.obstacles.add(obstacle);
   }
 
-  private addOneGround(x, y, frame): void {
-    let ground = new Ground({
-      scene: this,
-      x: x,
-      y: y,
-      frame: frame,
-      key: "ground"
-    });
-
-    // add groundTile to group
-    this.groundTiles.add(ground);
-  }
-
   private addRowOfObstacles(): void {
     // update the score
     this.score += 1;
@@ -154,14 +141,6 @@ export class GamePlayScene extends Phaser.Scene {
     // add 6 obstacles with one big hole at position hole and hole + 1
     for (let i = 0; i < 10; i += 1) {
       this.addOneObstacle(600, 430, 0);
-    }
-  }
-
-  private addRowOfGround(): void {
-    let currentGround: number;
-
-    for (currentGround = 0; currentGround < 10; currentGround += 1) {
-      this.addOneGround(201 * currentGround, 510, 0);
     }
   }
 

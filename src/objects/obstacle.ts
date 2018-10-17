@@ -7,7 +7,7 @@ export class Obstacle extends Phaser.GameObjects.Sprite {
     super(params.scene, params.x, params.y, params.key, params.frame);
 
     // image
-    this.setScale(1);
+    this.setScale(0.5);
     this.setOrigin(0, 0);
 
     // physics

@@ -6,7 +6,7 @@ import { Hero } from "../objects/hero";
 import { Obstacle } from "../objects/obstacle";
 import { Ground } from "../objects/ground";
 
-export class GameScene extends Phaser.Scene {
+export class GamePlayScene extends Phaser.Scene {
   // objects
   private hero: Hero;
   private obstacles: Phaser.GameObjects.Group;
@@ -20,7 +20,7 @@ export class GameScene extends Phaser.Scene {
 
   constructor() {
     super({
-      key: "GameScene" // set this scene's key to 'GameScene' for Phaser to use elsewhere
+      key: "GamePlayScene" // set this scene's key to 'GamePlayScene' for Phaser to reference elsewhere
     });
   }
 
@@ -39,13 +39,30 @@ export class GameScene extends Phaser.Scene {
     this.scoreText = [];
   }
 
+  preload(): void {
+    // Animation station!
+    this.anims.create({
+      key: 'walk',
+      frames: this.anims.generateFrameNames('hero',
+      {
+        prefix: 'bunny1_walk',
+        start: 0,
+        end: 2,
+        zeroPad: 0
+      }),
+      frameRate: 10,
+      repeat: -1
+    });
+  }
+
   create(): void {
+    
     // display in order, so make sure everything comes AFTER bg
     this.bg = this.add.tileSprite(0, 0, 135, 200, "background");
     this.bg.setScale(9);
 
     for (var i = 0; i < 12; i += 1) {
-      this.groundTiles.create(i * 201, 500, 'ground');
+      this.groundTiles.create(i * 380, 590, 'ground');
     }
 
     this.groundTiles;
@@ -69,12 +86,11 @@ export class GameScene extends Phaser.Scene {
     this.addRowOfGround();
 
     this.hero = new Hero({
-      scene: this, // belongs to 'this' scene (i.e. 'gameScene')
+      scene: this, // belongs to 'this' scene (i.e. 'GamePlayScene')
       x: 20, // x-position in the world (from canvas 0,0)
       y: 275, // y-position spawn in world (from canvas 0,0)
-      key: "hero", // image's key name
+      key: "hero", // keyword for preloaded image/sprite
     });
-
 
     this.physics.add.collider(this.hero, this.groundTiles);
 

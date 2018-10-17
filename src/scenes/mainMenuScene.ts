@@ -10,7 +10,10 @@ export class MainMenuScene extends Phaser.Scene {
     super({ key: "MainMenuScene" });
   }
 
-  init(): void {
+  // Comment toggle init() on/off for debugging
+  init(): void { console.log(this.scene.key); }
+
+  preload(): void {
     this.startKey = this.input.keyboard.addKey(
       Phaser.Input.Keyboard.KeyCodes.S
     );
@@ -25,7 +28,7 @@ export class MainMenuScene extends Phaser.Scene {
         this.sys.canvas.height / 2 - 80,
         "pixelFont",
         "RUNNER",
-        40
+        60
       )
     );
 
@@ -42,7 +45,7 @@ export class MainMenuScene extends Phaser.Scene {
 
   update(): void {
     if (this.startKey.isDown || this.input.activePointer.isDown) {
-      this.scene.start("GameScene");
+      this.scene.start("GamePlayScene");
     }
   }
 }

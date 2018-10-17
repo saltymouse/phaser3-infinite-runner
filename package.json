@@ -13,6 +13,7 @@
   ],
   "devDependencies": {
     "expose-loader": "0.7.5",
+    "phaser3-docs": "github:photonstorm/phaser3-docs#master",
     "ts-loader": "4.4.2",
     "typescript": "2.9.2",
     "webpack": "4.15.0",

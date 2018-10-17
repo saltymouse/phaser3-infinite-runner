@@ -1,7 +1,6 @@
 /**
  * Game over, dude
  */
-
 export class GameOverScene extends Phaser.Scene {
   private startKey: Phaser.Input.Keyboard.Key;
   private bitmapTexts: Phaser.GameObjects.BitmapText[] = [];

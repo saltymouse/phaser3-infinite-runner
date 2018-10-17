@@ -18,26 +18,40 @@ export class Hero extends Phaser.GameObjects.Sprite {
   }
 
   // 'constructor' sets your 'this' scope for the class
-  constructor(phaserSprite) {
+  constructor({scene, x, y, key}) {
     // https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html
-    super(phaserSprite.scene, phaserSprite.x, phaserSprite.y, phaserSprite.key, phaserSprite.frame);
+    super(scene, x, y, key);
 
     // image
     this.setScale(1);
     this.setOrigin(0, 0);
 
+    // animations?
+    this.scene.anims.create({
+      key: 'walk',
+      frames: this.scene.anims.generateFrameNames('hero',
+      {
+        prefix: 'bunny1_walk',
+        start: 1,
+        end: 2,
+        zeroPad: 0
+      }),
+      frameRate: 10,
+      repeat: -1
+    });
+
     // physics
-    phaserSprite.scene.physics.world.enable(this); // add our hero to the physics collision
+    this.scene.physics.world.enable(this); // add our hero to the physics collision
     this.body.setGravityY(500); // gravity specific for our hero character
     this.body.setSize(33, 53); // hit-box size (different from visual image size)
 
     // input
-    this.jumpKey = phaserSprite.scene.input.keyboard.addKey(
+    this.jumpKey = this.scene.input.keyboard.addKey(
       Phaser.Input.Keyboard.KeyCodes.SPACE
     );
-    phaserSprite.scene.add.existing(this);
+    this.scene.add.existing(this);
 
-    this.finger = phaserSprite.scene.input.manager.activePointer;
+    this.finger = this.scene.input.manager.activePointer;
   } // constructor
 
   update(): void {

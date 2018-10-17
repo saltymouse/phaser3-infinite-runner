@@ -1,11 +1,11 @@
-/**
- * Main gameplay scene!
- */
 
 import { Hero } from "../objects/hero";
 import { Obstacle } from "../objects/obstacle";
 import { Ground } from "../objects/ground";
 
+/**
+ * Main gameplay scene!
+ */
 export class GamePlayScene extends Phaser.Scene {
   // objects
   private hero: Hero;
@@ -19,9 +19,7 @@ export class GamePlayScene extends Phaser.Scene {
   private scoreText: Phaser.GameObjects.Text[];
 
   constructor() {
-    super({
-      key: "GamePlayScene" // set this scene's key to 'GamePlayScene' for Phaser to reference elsewhere
-    });
+    super({ key: "GamePlayScene" });
   }
 
   // 'init' is the very first function called per scene
@@ -40,33 +38,22 @@ export class GamePlayScene extends Phaser.Scene {
   }
 
   preload(): void {
-    // Animation station!
-    this.anims.create({
-      key: 'walk',
-      frames: this.anims.generateFrameNames('hero',
-      {
-        prefix: 'bunny1_walk',
-        start: 0,
-        end: 2,
-        zeroPad: 0
-      }),
-      frameRate: 10,
-      repeat: -1
-    });
-  }
+    // preload before create
+    
+  } // preload()
 
   create(): void {
-    
     // display in order, so make sure everything comes AFTER bg
     this.bg = this.add.tileSprite(0, 0, 135, 200, "background");
     this.bg.setScale(9);
 
-    for (var i = 0; i < 12; i += 1) {
+    for (var i = 0; i < 2; i += 1) {
       this.groundTiles.create(i * 380, 590, 'ground');
     }
 
     this.groundTiles;
 
+    // score text shadow
     this.scoreText.push(
       this.add.text(this.sys.canvas.width / 2 - 14, 30, "0", {
         fontFamily: "Connection",
@@ -74,6 +61,8 @@ export class GamePlayScene extends Phaser.Scene {
         fill: "#000"
       })
     );
+
+    // score text white
     this.scoreText.push(
       this.add.text(this.sys.canvas.width / 2 - 16, 30, "0", {
         fontFamily: "Connection",
@@ -92,7 +81,9 @@ export class GamePlayScene extends Phaser.Scene {
       key: "hero", // keyword for preloaded image/sprite
     });
 
+    // make sure our hero doesn't fall through the ground
     this.physics.add.collider(this.hero, this.groundTiles);
+    this.physics.add.overlap(this.hero, this.obstacles, this.hitObstacle, null, this);
 
     this.timer = this.time.addEvent({
       delay: 2500,
@@ -103,11 +94,11 @@ export class GamePlayScene extends Phaser.Scene {
   } // create
 
   update(): void {
+    // things to perform every update cycle (like... every millisecond)
 
     if (!this.hero.getDead()) {
       this.bg.tilePositionX -= 1;
-      this.hero.update();
-      this.physics.overlap(this.hero, this.obstacles, this.hitObstacle, null, this);
+      this.hero.update(); // jumping and screen detection as per hero.update()
     } else {
       Phaser.Actions.Call(
         this.obstacles.getChildren(),
@@ -173,10 +164,10 @@ export class GamePlayScene extends Phaser.Scene {
     }
   }
 
-
-
   private hitObstacle() {
     this.hero.setDead(true);
+
+    this.scene.start("GameOverScene");
   }
 
   private restartGame(): void {

@@ -1,0 +1,133 @@
+{
+	"frames": [
+		{
+			"filename": "bunny1_hurt",
+			"frame": {
+				"h": 44,
+				"w": 37,
+				"x": 40,
+				"y": 0
+			},
+			"spriteSourceSize": {
+				"h": 44,
+				"w": 37,
+				"x": 0,
+				"y": 0
+			},
+			"sourceSize": {
+				"h": 44,
+				"w": 37
+			},
+			"trimmed": false,
+			"rotated": false
+		},
+		{
+			"filename": "bunny1_jump",
+			"frame": {
+				"h": 46,
+				"w": 38,
+				"x": 0,
+				"y": 0
+			},
+			"spriteSourceSize": {
+				"h": 46,
+				"w": 38,
+				"x": 0,
+				"y": 0
+			},
+			"sourceSize": {
+				"h": 46,
+				"w": 38
+			},
+			"trimmed": false,
+			"rotated": false
+		},
+		{
+			"filename": "bunny1_ready",
+			"frame": {
+				"h": 48,
+				"w": 30,
+				"x": 79,
+				"y": 53
+			},
+			"spriteSourceSize": {
+				"h": 48,
+				"w": 30,
+				"x": 0,
+				"y": 0
+			},
+			"sourceSize": {
+				"h": 48,
+				"w": 30
+			},
+			"trimmed": false,
+			"rotated": false
+		},
+		{
+			"filename": "bunny1_stand",
+			"frame": {
+				"h": 51,
+				"w": 30,
+				"x": 32,
+				"y": 48
+			},
+			"spriteSourceSize": {
+				"h": 51,
+				"w": 30,
+				"x": 0,
+				"y": 0
+			},
+			"sourceSize": {
+				"h": 51,
+				"w": 30
+			},
+			"trimmed": false,
+			"rotated": false
+		},
+		{
+			"filename": "bunny1_walk1",
+			"frame": {
+				"h": 51,
+				"w": 30,
+				"x": 79,
+				"y": 0
+			},
+			"spriteSourceSize": {
+				"h": 51,
+				"w": 30,
+				"x": 0,
+				"y": 0
+			},
+			"sourceSize": {
+				"h": 51,
+				"w": 30
+			},
+			"trimmed": false,
+			"rotated": false
+		},
+		{
+			"filename": "bunny1_walk2",
+			"frame": {
+				"h": 52,
+				"w": 30,
+				"x": 0,
+				"y": 48
+			},
+			"spriteSourceSize": {
+				"h": 52,
+				"w": 30,
+				"x": 0,
+				"y": 0
+			},
+			"sourceSize": {
+				"h": 52,
+				"w": 30
+			},
+			"trimmed": false,
+			"rotated": false
+		}
+	],
+	"meta": {
+		"image": "bunny.png"
+	}
+}

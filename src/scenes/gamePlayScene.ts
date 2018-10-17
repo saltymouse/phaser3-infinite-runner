@@ -38,7 +38,7 @@ export class GamePlayScene extends Phaser.Scene {
 
   preload(): void {
     // preload before create
-    
+    // ...
   } // preload()
 
   create(): void {
@@ -167,8 +167,7 @@ export class GamePlayScene extends Phaser.Scene {
 
   private hitObstacle() {
     this.hero.setDead(true);
-
-    this.scene.start("GameOverScene");
+    this.restartGame();
   }
 
   private restartGame(): void {

@@ -1,0 +1,28 @@
+{
+	"./spikeBall1": {
+		"frame": {
+			"x": 0,
+			"y": 0,
+			"width": 146,
+			"height": 152
+		},
+		"sourceSize": {
+			"width": 142,
+			"height": 148
+		},
+		"rotated": false
+	},
+	"./spikeBall_2": {
+		"frame": {
+			"x": 0,
+			"y": 155,
+			"width": 152,
+			"height": 145
+		},
+		"sourceSize": {
+			"width": 148,
+			"height": 141
+		},
+		"rotated": false
+	}
+}

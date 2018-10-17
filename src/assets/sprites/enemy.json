@@ -1,28 +1,49 @@
 {
-	"./spikeBall1": {
-		"frame": {
-			"x": 0,
-			"y": 0,
-			"width": 146,
-			"height": 152
+	"frames": [
+		{
+			"filename": "spikeBall1",
+			"frame": {
+				"h": 152,
+				"w": 146,
+				"x": 0,
+				"y": 0
+			},
+			"spriteSourceSize": {
+				"h": 148,
+				"w": 142,
+				"x": 0,
+				"y": 0
+			},
+			"sourceSize": {
+				"h": 148,
+				"w": 142
+			},
+			"trimmed": false,
+			"rotated": false
 		},
-		"sourceSize": {
-			"width": 142,
-			"height": 148
-		},
-		"rotated": false
-	},
-	"./spikeBall_2": {
-		"frame": {
-			"x": 0,
-			"y": 155,
-			"width": 152,
-			"height": 145
-		},
-		"sourceSize": {
-			"width": 148,
-			"height": 141
-		},
-		"rotated": false
+		{
+			"filename": "spikeBall_2",
+			"frame": {
+				"h": 145,
+				"w": 152,
+				"x": 0,
+				"y": 155
+			},
+			"spriteSourceSize": {
+				"h": 141,
+				"w": 148,
+				"x": 0,
+				"y": 0
+			},
+			"sourceSize": {
+				"h": 141,
+				"w": 148
+			},
+			"trimmed": false,
+			"rotated": false
+		}
+	],
+	"meta": {
+		"image": "enemy.png"
 	}
 }

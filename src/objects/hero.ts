@@ -1,5 +1,5 @@
 /**
- * Player 1
+ * Our jumping hero
  */
 
 export class Hero extends Phaser.GameObjects.Sprite {
@@ -13,7 +13,7 @@ export class Hero extends Phaser.GameObjects.Sprite {
     return this.isDead;
   }
 
-  public setDead(dead): void {
+  public setDead(dead: boolean): void {
     this.isDead = dead;
   }
 
@@ -27,9 +27,9 @@ export class Hero extends Phaser.GameObjects.Sprite {
     this.setOrigin(0, 0);
 
     // physics
-    phaserSprite.scene.physics.world.enable(this);
-    this.body.setGravityY(500);
-    this.body.setSize(65, 70); // hit-box size (different from visual image size)
+    phaserSprite.scene.physics.world.enable(this); // add our hero to the physics collision
+    this.body.setGravityY(500); // gravity specific for our hero character
+    this.body.setSize(33, 53); // hit-box size (different from visual image size)
 
     // input
     this.jumpKey = phaserSprite.scene.input.keyboard.addKey(
@@ -43,7 +43,6 @@ export class Hero extends Phaser.GameObjects.Sprite {
   update(): void {
     this.handleInput();
     this.isOffTheScreen();
-
   }
 
   private handleInput(): void {
@@ -64,6 +63,7 @@ export class Hero extends Phaser.GameObjects.Sprite {
     this.jumpPower -= 1;
     this.body.setVelocityY(-350);
     console.log(this.jumpPower);
+    this.play('walk');
   }
 
   private isOffTheScreen(): void {

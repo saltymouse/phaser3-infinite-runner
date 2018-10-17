@@ -80,6 +80,8 @@ export class GamePlayScene extends Phaser.Scene {
       key: "hero", // keyword for preloaded image/sprite
     });
 
+    this.hero.play('walk'); // walking by default
+
     // make sure our hero doesn't fall through the ground
     this.physics.add.collider(this.hero, this.groundTiles);
     this.physics.add.overlap(this.hero, this.obstacles, this.hitObstacle, null, this);

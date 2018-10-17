@@ -1,10 +1,11 @@
+// It's TypeScript time
 /// <reference path="./phaser.d.ts"/>
 
 import "phaser";
-import { BootScene } from "./scenes/bootScene";
+// import { BootScene } from "./scenes/bootScene";
 import { PreloadScene } from "./scenes/preloadScene";
 import { MainMenuScene } from "./scenes/mainMenuScene";
-import { GameScene } from "./scenes/gameScene";
+import { GamePlayScene } from "./scenes/gamePlayScene";
 import { GameOverScene } from "./scenes/gameOverScene";
 
 // initialize our game according to Phaser's 'GameConfig' object model
@@ -20,7 +21,7 @@ const config: GameConfig = {
   zoom: 1,
   type: Phaser.AUTO,
   parent: "game", // <div id="game"></div>
-  scene: [BootScene, MainMenuScene, GameScene, GameOverScene], // load scenes in this order
+  scene: [PreloadScene, MainMenuScene, GamePlayScene, GameOverScene], // load scenes in this order
   input: {
     keyboard: true,
     mouse: true,

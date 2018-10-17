@@ -1,5 +1,5 @@
 {
-  "preload": {
+  "preloadAssets": {
     "files": [
       {
         "type": "bitmapFont",
@@ -13,9 +13,10 @@
         "url": "src/assets/sprites/Background/bg_layer1.png"
       },
       {
-        "type": "image",
+        "type": "atlas",
         "key": "hero",
-        "url": "src/assets/sprites/Players/bunny1_ready.png"
+        "textureURL": "src/assets/sprites/bunny.png",
+        "atlasURL": "src/assets/sprites/bunny.json"
       },
       {
         "type": "image",
@@ -26,6 +27,15 @@
         "type": "image",
         "key": "obstacle",
         "url": "src/assets/sprites/Enemies/flyMan_fly.png"
+      },
+      {
+        "type": "audio",
+        "key": "bgm",
+        "urls": [
+          "src/assets/audio/music.m4a",
+          "src/assets/audio/music.ogg"
+        ],
+        "autoDecode": true
       }
     ]
   }

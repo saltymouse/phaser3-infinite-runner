@@ -1,30 +1,33 @@
-# Logs
-logs
+# Logs and databases
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+*.sql
+*.sqlite
 
-# Runtime data
-pids
-*.pid
-*.seed
-*.pid.lock
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
-# Compiled binary addons (https://nodejs.org/api/addons.html)
-build/Release
-
-# Dependency directories
-node_modules/
-
-# Optional npm cache directory
-.npm
-
-# Optional eslint cache
-.eslintcache
-
+# Packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
 # Output of 'npm pack'
 *.tgz
+
+# Dependency directories
+node_modules
+.npm
+.eslintcache
 
 # Webpack generated content
 build
